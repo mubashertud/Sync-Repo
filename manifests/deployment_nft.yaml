@@ -1,0 +1,17 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nft-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nft
+  template:
+    metadata:
+      labels:
+        app: nft
+    spec:
+      containers:
+        - name: nft
+          image: mubasherm/newsfetcher:v1
